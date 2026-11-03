@@ -271,7 +271,7 @@ label.big {
     <label class="big" for="cur">
       Aktueller Ladestand
       <span class="field">
-        <input id="cur" type="text" inputmode="decimal" enterkeyhint="done" autocomplete="off" autocorrect="off" value="32" aria-describedby="out">
+        <input id="cur" type="text" inputmode="decimal" enterkeyhint="done" autocomplete="off" autocorrect="off" value="0" aria-describedby="out">
         <span class="unit">%</span>
       </span>
     </label>
@@ -365,7 +365,10 @@ label.big {
 
   [cur, tgt, capy].forEach(function (el) {
     el.addEventListener("input", function () { update(); if (el !== cur) save(); });
-    el.addEventListener("focus", function () { el.select(); });
+    el.addEventListener("focus", function () {
+      el.select();
+      setTimeout(function () { try { el.setSelectionRange(0, el.value.length); } catch (e) {} }, 0);
+    });
     el.addEventListener("keydown", function (e) { if (e.key === "Enter") el.blur(); });
   });
   update();
