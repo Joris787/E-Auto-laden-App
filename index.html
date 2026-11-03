@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c1513">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Laden">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADT0lEQVR4Xu3dTW4TQRSFUQcxZIZYCQtgUayDRbEA9oRQoyQ47nZf4e56qXfOmJ+4uP5cRFb89OnL5wvc8sGxsMY4MA5yyoFykFMOlIOccqAc5JQD5SCnHCgHOeVAOcgpB8pBTjlQDnLKgXKQUw6Ug5xyoBzklAPlIKccKAc55UA5yCkHykFOOVAOcsqBcpBTDpSDnHKgHOSUA+UgpxwoBznlQDnIKQfKQU45UA5yyoFykFMOlIPcx/y3HOjrzx8H/unF/Pr2vdhXdO2pyIcOt5rFa5UnMn4cbWdRfyKDL6SWsah5DiPHUfNERil4GsPGUfAshqt2JsPGQX1jLqQbT5HKt/cHehcnUKscRZZxQt6LPNJtA8axdvRFzuuEZSzWHu9pX8BdA8ZxU5FlnKz4o64yjiLqPGsrMI4XlnHFOP56vYzitT+NcbDKOP7wgnKTcViGcqzQjA3KgXLcIhvb+pbDMu5qOg7L2KPWu8+5cnfEh36/rmM5tk/80ON+X9qN4+5zkWftxsF+vcYhG5FG47CMVJf/rexfxv5fuZj4AtuoHEeYeBmXS49xpDHYae5ltBjHQcvoYPKXleOWMX02WpTjCB2WMfk4DspGk2XMPI6DltHKnHeO45bRJxszl+MIrZYx5zgOyka3ZVwuM377PP1XPGhME5jzzvFw6eDm0H0ce7LRcxlz3jkeq+0yjIMt3V9WtnXORvdyeBv6NuW4rXkzFl3eJhips4yxX4lysKrvOIr/ONQK+o7jprEZr8Y4XljGFePAneNfby8csvGWcvxhGTcZh2V4WSHXsRx+zPlOHcfxzFVjW5Vx7HlH1mNVWMb5jzoyYBz1P77qHPW/fz9gHBtOeCYtf8XwbJzwSP/fmI8O9SkWa4av9rVa5aCUYeMo9RQpotqZDBtHhRf+UqotY/wbjAueyBA1z2HYhfTKu7i9H6HmLBZVxrFoNZHKs6g4DkoZeSGlOONglXFgHOSUA+UgpxwoBznlQDnIKQfKQU45UA5yyoFykFMOlIOccqAc5JQD5SCnHCgHOeVAOcgpB8pBTjlQDnLKgXKQUw6Ug5xyoBzklAPlIKccKAc55UA5yCkHykFOOVAOcsqBcpBTDpSDnHKgHOSUA+Ug9xsNyKOMmLyuFAAAAABJRU5ErkJggg==">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADT0lEQVR4Xu3dTW4TQRSFUQcxZIZYCQtgUayDRbEA9oRQoyQ47nZf4e56qXfOmJ+4uP5cRFb89OnL5wvc8sGxsMY4MA5yyoFykFMOlIOccqAc5JQD5SCnHCgHOeVAOcgpB8pBTjlQDnLKgXKQUw6Ug5xyoBzklAPlIKccKAc55UA5yCkHykFOOVAOcsqBcpBTDpSDnHKgHOSUA+UgpxwoBznlQDnIKQfKQU45UA5yyoFykFMOlIPcx/y3HOjrzx8H/unF/Pr2vdhXdO2pyIcOt5rFa5UnMn4cbWdRfyKDL6SWsah5DiPHUfNERil4GsPGUfAshqt2JsPGQX1jLqQbT5HKt/cHehcnUKscRZZxQt6LPNJtA8axdvRFzuuEZSzWHu9pX8BdA8ZxU5FlnKz4o64yjiLqPGsrMI4XlnHFOP56vYzitT+NcbDKOP7wgnKTcViGcqzQjA3KgXLcIhvb+pbDMu5qOg7L2KPWu8+5cnfEh36/rmM5tk/80ON+X9qN4+5zkWftxsF+vcYhG5FG47CMVJf/rexfxv5fuZj4AtuoHEeYeBmXS49xpDHYae5ltBjHQcvoYPKXleOWMX02WpTjCB2WMfk4DspGk2XMPI6DltHKnHeO45bRJxszl+MIrZYx5zgOyka3ZVwuM377PP1XPGhME5jzzvFw6eDm0H0ce7LRcxlz3jkeq+0yjIMt3V9WtnXORvdyeBv6NuW4rXkzFl3eJhips4yxX4lysKrvOIr/ONQK+o7jprEZr8Y4XljGFePAneNfby8csvGWcvxhGTcZh2V4WSHXsRx+zPlOHcfxzFVjW5Vx7HlH1mNVWMb5jzoyYBz1P77qHPW/fz9gHBtOeCYtf8XwbJzwSP/fmI8O9SkWa4av9rVa5aCUYeMo9RQpotqZDBtHhRf+UqotY/wbjAueyBA1z2HYhfTKu7i9H6HmLBZVxrFoNZHKs6g4DkoZeSGlOONglXFgHOSUA+UgpxwoBznlQDnIKQfKQU45UA5yyoFykFMOlIOccqAc5JQD5SCnHCgHOeVAOcgpB8pBTjlQDnLKgXKQUw6Ug5xyoBzklAPlIKccKAc55UA5yCkHykFOOVAOcsqBcpBTDpSDnHKgHOSUA+Ug9xsNyKOMmLyuFAAAAABJRU5ErkJggg==">
+<title>Ladebedarf</title>
+<style>
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html, body { margin: 0; }
+[hidden] { display: none !important; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow column. Eingabe oben, große kWh-Zahl, darunter ein Akku-Balken, der die Lücke bis zum Ziel zeigt. */
+:root {
+  --bg: #edf2f0;
+  --surface: #f9fbfa;
+  --fg: #12221e;
+  --muted: #5c706a;
+  --line: #cfdad6;
+  --track: #dbe5e1;
+  --have: #3d5a52;
+  --accent: #0a7d5a;
+  --accent-ink: #ffffff;
+  --focus: #0a7d5a;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "DM Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c1513;
+    --surface: #131f1c;
+    --fg: #e6f0ec;
+    --muted: #92a8a1;
+    --line: #243631;
+    --track: #1d2e29;
+    --have: #6f948a;
+    --accent: #3fd6a0;
+    --accent-ink: #06231a;
+    --focus: #3fd6a0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c1513;
+  --surface: #131f1c;
+  --fg: #e6f0ec;
+  --muted: #92a8a1;
+  --line: #243631;
+  --track: #1d2e29;
+  --have: #6f948a;
+  --accent: #3fd6a0;
+  --accent-ink: #06231a;
+  --focus: #3fd6a0;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+input, label { touch-action: manipulation; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.45;
+  padding-block: 24px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main {
+  max-width: 440px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  margin: 0;
+  color: var(--muted);
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+label.big {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.field {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 6px;
+}
+.field:focus-within { border-color: var(--focus); }
+.field input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  background: transparent;
+  color: var(--fg);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3.4rem;
+  line-height: 1;
+  padding: 0;
+  outline: none;
+  font-variant-numeric: tabular-nums;
+}
+.field .unit {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--muted);
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.result .cap {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.result .num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.result .num small {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-left: 6px;
+}
+.result .note { font-size: 0.9rem; color: var(--muted); min-height: 1.3em; }
+
+.bar { position: relative; padding-top: 22px; }
+.track {
+  position: relative;
+  height: 28px;
+  background: var(--track);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.have, .gap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.have { left: 0; background: var(--have); }
+.gap { background: var(--accent); }
+.target {
+  position: absolute;
+  top: 0;
+  height: 50px;
+  width: 0;
+  border-left: 2px solid var(--fg);
+}
+.target span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  margin-right: 6px;
+}
+
+.settings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.settings label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  min-width: 0;
+}
+.settings .inp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0 12px;
+}
+.settings .inp:focus-within { border-color: var(--focus); }
+.settings input {
+  min-width: 0;
+  flex: 1;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  outline: none;
+  font-variant-numeric: tabular-nums;
+}
+.settings .inp span { color: var(--muted); font-size: 0.9rem; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .have, .gap, .target { transition: left 0.25s ease, width 0.25s ease; }
+}
+@media (max-width: 360px) {
+  .field input { font-size: 2.8rem; }
+  .result .num { font-size: 3.2rem; }
+}
+</style>
+
+</head>
+<body>
+<main>
+  <h1>Ladebedarf</h1>
+
+  <section class="card" aria-label="Rechner">
+    <label class="big" for="cur">
+      Aktueller Ladestand
+      <span class="field">
+        <input id="cur" type="text" inputmode="decimal" enterkeyhint="done" autocomplete="off" autocorrect="off" value="32" aria-describedby="out">
+        <span class="unit">%</span>
+      </span>
+    </label>
+
+    <div class="result" id="out" aria-live="polite">
+      <span class="cap" id="cap">Zu laden bis 80 %</span>
+      <span class="num" id="num">–</span>
+      <span class="note" id="note"></span>
+    </div>
+
+    <div class="bar" aria-hidden="true">
+      <div class="track">
+        <div class="have" id="have"></div>
+        <div class="gap" id="gap"></div>
+      </div>
+      <div class="target" id="target"><span id="targetLabel">80 %</span></div>
+      <div class="legend">
+        <span><i style="background: var(--have)"></i>im Akku</span>
+        <span><i style="background: var(--accent)"></i>fehlt bis Ziel</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="settings" aria-label="Einstellungen">
+    <label for="tgt">
+      Ziel
+      <span class="inp"><input id="tgt" type="text" inputmode="decimal" enterkeyhint="done" autocomplete="off" autocorrect="off" value="80"><span>%</span></span>
+    </label>
+    <label for="capy">
+      Akku
+      <span class="inp"><input id="capy" type="text" inputmode="decimal" enterkeyhint="done" autocomplete="off" autocorrect="off" value="50"><span>kWh</span></span>
+    </label>
+  </section>
+</main>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var cur = $("cur"), tgt = $("tgt"), capy = $("capy");
+  var fmt = new Intl.NumberFormat("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  var fmtP = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 1 });
+
+  try {
+    var s = JSON.parse(localStorage.getItem("ladebedarf") || "{}");
+    if (s.tgt) tgt.value = s.tgt;
+    if (s.cap) capy.value = s.cap;
+  } catch (e) {}
+
+  function num(v) {
+    var n = parseFloat(String(v).replace(",", ".").replace(/[^0-9.]/g, ""));
+    return isNaN(n) ? null : n;
+  }
+  function clamp(n) { return Math.max(0, Math.min(100, n)); }
+
+  function update() {
+    var c = num(cur.value), t = num(tgt.value), k = num(capy.value);
+    t = t === null ? 80 : clamp(t);
+    k = k === null || k <= 0 ? 50 : k;
+    var numEl = $("num"), note = $("note");
+
+    $("cap").textContent = "Zu laden bis " + fmtP.format(t) + " %";
+    $("targetLabel").textContent = fmtP.format(t) + " %";
+    $("target").style.left = t + "%";
+
+    if (c === null) {
+      numEl.textContent = "–";
+      note.textContent = "Ladestand eingeben";
+      $("have").style.width = "0%";
+      $("gap").style.width = "0%";
+      return;
+    }
+    c = clamp(c);
+    $("have").style.width = Math.min(c, t) + "%";
+    var gapPct = Math.max(0, t - c);
+    $("gap").style.left = Math.min(c, t) + "%";
+    $("gap").style.width = gapPct + "%";
+
+    if (c >= t) {
+      numEl.innerHTML = "0,0<small>kWh</small>";
+      note.textContent = "Ziel ist schon erreicht.";
+    } else {
+      var kwh = (t - c) / 100 * k;
+      numEl.innerHTML = fmt.format(kwh) + "<small>kWh</small>";
+      note.textContent = "Bei " + fmtP.format(k) + " kWh Akku, von " + fmtP.format(c) + " % auf " + fmtP.format(t) + " %.";
+    }
+  }
+
+  function save() {
+    try { localStorage.setItem("ladebedarf", JSON.stringify({ tgt: tgt.value, cap: capy.value })); } catch (e) {}
+  }
+
+  [cur, tgt, capy].forEach(function (el) {
+    el.addEventListener("input", function () { update(); if (el !== cur) save(); });
+    el.addEventListener("focus", function () { el.select(); });
+    el.addEventListener("keydown", function (e) { if (e.key === "Enter") el.blur(); });
+  });
+  update();
+})();
+</script>
+
+</body>
+</html>
